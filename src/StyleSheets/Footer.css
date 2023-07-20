@@ -1,0 +1,74 @@
+.bottom-area {
+  width: 50%;
+  justify-content: center;
+  position: relative;
+}
+.bottom-area .hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bottom-area .hint kbd {
+  background-color: var(--font-color);
+  color: var(--bg-color);
+  padding: 2.5px 5px;
+  margin: 10px;
+  border-radius: 3px;
+  font-size: 9pt;
+}
+.bottom-area footer {
+  width: 100%;
+}
+.bottom-area footer button, .bottom-area footer > a {
+  font-size: 12pt;
+  border: none;
+  width: 150px;
+  margin: 0;
+  padding: 0 10px;
+}
+.bottom-area footer .contributor-list {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 90px;
+  right: 10px;
+  max-height: 300%;
+  width: 300px;
+  overflow-y: auto;
+  background-color: var(--bg-color);
+  border: 1px solid var(--fg-color);
+  box-shadow: 5px 5px var(--fg-color);
+  scrollbar-width: thin;
+}
+.bottom-area footer .contributor-list h2 {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color);
+  padding: 15px;
+  margin: 0;
+}
+.bottom-area footer .contributor-list .contributor {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.bottom-area footer .contributor-list .contributor img {
+  border-radius: 50%;
+  margin: 5px;
+}
+.bottom-area footer .contributor-list .contributor .contributor-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px 15px;
+}
+.bottom-area footer .contributor-list::-webkit-scrollbar {
+  width: 5px;
+}
+.bottom-area footer .contributor-list::-webkit-scrollbar-thumb {
+  background-color: var(--font-color);
+  border-radius: 10px;
+}
+.bottom-area footer .contributor-list::-webkit-scrollbar-track-piece {
+  background-color: var(--bg-color);
+}/*# sourceMappingURL=Footer.css.map */

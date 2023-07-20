@@ -1,0 +1,123 @@
+.players-profile-base-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  margin-top: 4rem;
+  gap: 2rem;
+  position: relative;
+}
+.user-container-active {
+  padding: 0.1rem;
+  background: linear-gradient(91deg, #1bacf4 0%, #19eeb5 100.16%);
+  border-radius: 0.375rem;
+}
+.user-container {
+  padding: 0.1rem;
+}
+
+.players-profile-card {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-profile-container {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 4rem;
+  background: linear-gradient(97.06deg, #f5489d 2.9%, #fe7172 97.24%);
+  margin-bottom: 0rem;
+}
+
+#start-button {
+  border: none;
+  outline: none;
+  background: linear-gradient(97.06deg, #2fe4da 2.9%, #5d78e8 97.24%);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  left: 0;
+}
+
+.start-countdown {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  z-index: 12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.count {
+  margin-bottom: 0rem;
+  font-size: 5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.players-stat-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.player-stat-card {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  background: #141414;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+}
+
+.player-profile-conatainer {
+  height: 4rem;
+  width: 4rem;
+}
+
+.player-profile-conatainer > img {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.player-stat-wpm-conatainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.player-stat-wpm-conatainer > img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.player-stat-wpm-conatainer > p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0rem;
+  background: linear-gradient(97.06deg, #2fe4da 2.9%, #5d78e8 97.24%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.player-stat-wpm-conatainer > p > span {
+  font-size: 0.75rem;
+  font-weight: 600;
+} /*# sourceMappingURL=PlayersInfoContainer.css.map */
