@@ -1,6 +1,7 @@
 import "../StyleSheets/Test.css";
 
-import { WordList, planeWordList } from "../WordList/planewordlist";
+import { updateWordList } from "../WordList/planewordlist";
+
 import {
   addResult,
   setRank,
@@ -19,8 +20,12 @@ import { useParams } from "react-router-dom";
 
 
 const Test = () => {
+  const [planeWordList, setPlaneWordList] = useState("default");
+  const [WordList, setWordList] = useState([]);
+
   const [currWordIndex, setCurrWordIndex] = useState(0);
   const [currWordStatus, setCurrWordStatus] = useState(false);
+  
   const [wordListArray, setWordListArray] = useState(planeWordList.split(" "));
   const [timeElapsed, setTimElapsed] = useState(0);
   const [isBlock, setIsBlock] = useState(false);
@@ -249,7 +254,35 @@ const Test = () => {
       wrong: wrongWords.length,
     };
   }
+  function handleWordListUpdate() {
+    const { planeWordList, WordList } = updateWordList();
+    setPlaneWordList(planeWordList); // Update planeWordList state
+    setWordList(WordList); // Update WordList state
 
+    // Update wordListArray state
+    setWordListArray(WordList);
+
+    // Update wordListStat state
+    const initialWordListStat = {};
+    WordList.forEach((value, idx) => {
+      initialWordListStat[idx] = { test: false };
+    });
+    setWordListStat(initialWordListStat);
+
+    // Update wordnew state
+    const wordArray = [];
+    WordList.forEach((value, idx) => {
+      const initialState = {};
+      initialState["word"] = value;
+      initialState["backspace"] = 0;
+      initialState["typed"] = "";
+      initialState["keyStrokes"] = 0;
+      wordArray.push(initialState);
+    });
+    setWordnew(wordArray);
+
+    // You can perform any other actions you want after updating the word list here.
+  }
   function getWPM() {
     let count = wordnew.filter((elm, idx) => elm.word == elm.typed).length;
     console.log("count", count);
@@ -355,11 +388,24 @@ const Test = () => {
     );
   });
 
+  
+
   return (
     <>
       {showScoreBoard && <ScoreBoard />}
       <div className="home-Page-content">
+      
         <div className="typing-test-container">
+          <div className="hardness">
+          <h1>Select Word List Difficulty:</h1>
+  <select id="wordListDifficulty">
+    <option value="easy">Easy</option>
+    <option value="medium">Medium</option>
+    <option value="hard">Hard</option>
+  </select>
+  
+  <button onClick={() => handleWordListUpdate()}>Apply</button>
+          </div>
           <div className="typing-word-display-container">
             {wordnew.map((elm, idx) => (
               <p
